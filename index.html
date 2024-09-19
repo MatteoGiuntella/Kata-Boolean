@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kata</title>
+  </head>
+  <body>
+    <script>
+      // 1
+      function solve(a, b) {
+        let alicePoints = 0;
+        let bobPoints = 0;
+
+        for (let i = 0; i < 3; i++) {
+          if (a[i] > b[i]) {
+            alicePoints++;
+          } else if (a[i] < b[i]) {
+            bobPoints++;
+          }
+        }
+
+        let result;
+        if (alicePoints > bobPoints) {
+          result = `Alice made "Kurt" proud!`;
+        } else if (bobPoints > alicePoints) {
+          result = `Bob made "Jeff" proud!`;
+        } else {
+          result = `that looks like a "draw"! Rock on!`;
+        }
+
+        return `${alicePoints}, ${bobPoints}: ${result}`;
+      }
+      //2
+
+      let minword = singleword[0];
+      for (let i = 0; i < singleword.length; i++) {
+        if (singleword[i].length < minword.length) {
+          minword = singleword[i];
+        }
+      }
+      return minword.length;
+      //forma breve
+      return s.split(" ").sort((a, b) => a.length - b.length)[0].length;
+
+      //3
+      function spinWords(string) {
+        return string
+          .split(" ")
+          .map((x) => (x.length >= 5 ? x.split("").reverse().join("") : x))
+          .join(" ");
+      }
+      //4
+      function check(a, x) {
+        return a.includes(x);
+      }
+      //5
+      function isPangram(string) {
+        let alpha = "abcdefghijklmnopqrstuvwxyz";
+        return alpha.split("").every((x) => string.toLowerCase().includes(x));
+      }
+    </script>
+  </body>
+</html>
